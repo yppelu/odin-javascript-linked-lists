@@ -78,4 +78,15 @@ class LinkedList {
     }
     return null;
   }
+
+  toString() {
+    let string = '';
+    let cursor = this._head;
+    while (cursor !== null) {
+      string += `( ${cursor.value} ) -> `;
+      cursor = cursor.nextNode;
+    }
+    string += 'null';
+    return string;
+  }
 }
