@@ -33,4 +33,14 @@ class LinkedList {
   head() { return this._head }
   tail() { return this._tail }
   size() { return this._size }
+
+  at(index) {
+    let i = 0;
+    let cursor = this._head;
+    while (i !== index && cursor !== null) {
+      cursor = cursor.nextNode;
+      i++;
+    }
+    return cursor;
+  }
 }
