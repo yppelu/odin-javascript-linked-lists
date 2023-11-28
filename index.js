@@ -43,4 +43,19 @@ class LinkedList {
     }
     return cursor;
   }
+
+  pop() {
+    if (this._size) {
+      if (this._size === 1) {
+        this._head = null;
+        this._tail = null;
+      } else {
+        let cursor = this._head;
+        while (cursor.nextNode !== this._tail) cursor = cursor.nextNode;
+        cursor.nextNode = null;
+        this._tail = cursor;
+      }
+      this._size--;
+    }
+  }
 }
