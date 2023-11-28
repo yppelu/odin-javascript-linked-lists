@@ -29,4 +29,8 @@ class LinkedList {
 
     this._size++;
   }
+
+  head() { return this._head }
+  tail() { return this._tail }
+  size() { return this._size }
 }
