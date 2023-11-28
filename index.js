@@ -18,7 +18,7 @@ class LinkedList {
     else this._tail.nextNode = newNode;
     this._tail = newNode;
 
-    this._size++;
+    return ++this._size;
   }
 
   prepend(value) {
@@ -27,7 +27,7 @@ class LinkedList {
     else newNode.nextNode = this._head;
     this._head = newNode;
 
-    this._size++;
+    return ++this._size;
   }
 
   head() { return this._head }
@@ -45,7 +45,10 @@ class LinkedList {
   }
 
   pop() {
+    let removedElement;
+
     if (this._size) {
+      removedElement = this._tail;
       if (this._size === 1) {
         this._head = null;
         this._tail = null;
@@ -57,6 +60,8 @@ class LinkedList {
       }
       this._size--;
     }
+
+    return removedElement;
   }
 
   contains(value) {
