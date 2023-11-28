@@ -58,4 +58,24 @@ class LinkedList {
       this._size--;
     }
   }
+
+  contains(value) {
+    let cursor = this._head;
+    while (cursor !== null) {
+      if (cursor.value === value) return true;
+      cursor = cursor.nextNode;
+    }
+    return false;
+  }
+
+  find(value) {
+    let index = 0;
+    let cursor = this._head;
+    while (cursor !== null) {
+      if (cursor.value === value) return index;
+      cursor = cursor.nextNode;
+      index++;
+    }
+    return null;
+  }
 }
