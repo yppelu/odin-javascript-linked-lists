@@ -105,4 +105,23 @@ class LinkedList {
 
     return ++this._size;
   }
+
+  removeAt(index) {
+    if (index < 0 || index >= this._size) return null;
+    if (index === this._size - 1) return this.pop();
+
+    let removedElement;
+
+    if (index === 0) {
+      removedElement = this._head;
+      this._head = removedElement.nextNode;
+    } else {
+      let cursor = this._head;
+      for (let i = 0; i < index - 1; i++) cursor = cursor.nextNode;
+      removedElement = cursor.nextNode;
+      cursor.nextNode = cursor.nextNode.nextNode;
+    }
+
+    return removedElement;
+  }
 }
