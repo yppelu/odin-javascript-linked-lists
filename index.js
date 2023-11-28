@@ -74,12 +74,9 @@ class LinkedList {
   }
 
   find(value) {
-    let index = 0;
     let cursor = this._head;
-    while (cursor !== null) {
-      if (cursor.value === value) return index;
-      cursor = cursor.nextNode;
-      index++;
+    for (let i = 0; cursor !== null; i++, cursor = cursor.nextNode) {
+      if (cursor.value === value) return i;
     }
     return null;
   }
