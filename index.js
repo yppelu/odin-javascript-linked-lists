@@ -122,6 +122,7 @@ class LinkedList {
       cursor.nextNode = cursor.nextNode.nextNode;
     }
 
+    this._size--;
     return removedElement;
   }
 }
