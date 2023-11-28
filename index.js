@@ -91,4 +91,18 @@ class LinkedList {
     string += 'null';
     return string;
   }
+
+  insertAt(value, index) {
+    if (index < 0 || index > this._size) return null;
+    if (index === this._size) return this.append(value);
+    if (index === 0) return this.prepend(value);
+
+    const newNode = new Node(value);
+    let cursor = this._head;
+    for (let i = 0; i < index - 1; i++) cursor = cursor.nextNode;
+    newNode.nextNode = cursor.nextNode;
+    cursor.nextNode = newNode;
+
+    return ++this._size;
+  }
 }
